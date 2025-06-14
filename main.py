@@ -1,16 +1,22 @@
+from stats import get_num_words
+from stats import get_letters
+
+#this function read the book text from a file and returns it as a string.
 def get_book_text(file_path):
     with open(file_path) as f:
         book_text = f.read()
         return book_text
-
-def num_words(book_text):
-    words = book_text.split()
-    return len(words)
     
+    #This function runs the program that should count the number of words and letters in a book.
 def main():
     text = get_book_text("books/frankenstein.txt")
-    amount = num_words(text)
+    amount = get_num_words(text)
+    letters = get_letters(text)
     print(f"{amount} words found in the document")
+    print(f"Letters found in the document: {letters}")
+    
+
+
 
 
 main()
