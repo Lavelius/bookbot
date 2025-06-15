@@ -14,8 +14,9 @@ def main():
     amount = get_num_words(text)
     letters = get_letters(text)
     sorted_letters = sort_letters_dict(letters)
-    print(f"{amount} words found in the document")
-    print(f"Letters found in the document: {sorted_letters}")
+    print(f"Found {amount} total words")
+    for letter in sorted_letters:
+        print(f"{letter['char']}: {letter['num']}")
     
 
 
